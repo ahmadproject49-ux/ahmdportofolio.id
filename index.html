@@ -1,0 +1,1574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khaerul Ahmad Ejasaputra - Situs Pribadi</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+
+    <!-- Embedded CSS -->
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #0f3460 0%, #1a5c8f 50%, #d4af37 100%);
+            min-height: 100vh;
+            scroll-behavior: smooth;
+        }
+
+        /* Welcome/Landing Page */
+        .welcome-page {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(135deg, #0f3460 0%, #1a5c8f 50%, #d4af37 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 0.8s ease, visibility 0.8s ease;
+        }
+
+        .welcome-page.hide {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .welcome-content {
+            text-align: center;
+            color: white;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .welcome-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            font-weight: 900;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .welcome-content p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .welcome-content .divider {
+            width: 80px;
+            height: 3px;
+            background: #d4af37;
+            margin: 1.5rem auto 2rem;
+        }
+
+        .enter-btn {
+            background: rgba(212, 175, 55, 0.9);
+            color: #0f3460;
+            border: 2px solid #d4af37;
+            padding: 1rem 3rem;
+            font-size: 1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .enter-btn:hover {
+            background: #d4af37;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .main-content {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.8s ease, visibility 0.8s ease;
+        }
+
+        .main-content.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Navigation Bar */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(15, 52, 96, 0.98);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            border-bottom: 2px solid #d4af37;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            z-index: 999;
+            display: none;
+        }
+
+        nav.show {
+            display: block;
+            animation: slideDown 0.5s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: #d4af37;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .nav-brand:hover {
+            color: #fff;
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #d4af37;
+            background: rgba(212, 175, 55, 0.1);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #d4af37;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #d4af37;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .menu-toggle:hover {
+            transform: scale(1.2);
+        }
+
+        /* Dark Mode Styling */
+        :root {
+            --bg-primary: #0f3460;
+            --bg-secondary: #1a5c8f;
+            --accent-color: #d4af37;
+            --text-primary: rgba(255, 255, 255, 0.9);
+            --text-secondary: rgba(255, 255, 255, 0.8);
+            --card-bg: rgba(15, 52, 96, 0.7);
+        }
+
+        body.dark-mode {
+            --bg-primary: #1a1a2e;
+            --bg-secondary: #16213e;
+            --accent-color: #ffd700;
+            --text-primary: rgba(255, 255, 255, 0.95);
+            --text-secondary: rgba(255, 255, 255, 0.85);
+            --card-bg: rgba(26, 26, 46, 0.8);
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #ffd700 100%) !important;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .dark-mode-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--accent-color);
+            border: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            z-index: 500;
+        }
+
+        .dark-mode-toggle:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        body.dark-mode .dark-mode-toggle {
+            background: #1a5c8f;
+            color: #ffd700;
+        }
+
+        /* Chat Widget Styling */
+        .chat-widget {
+            position: fixed;
+            bottom: 140px;
+            right: 20px;
+            width: 350px;
+            height: 500px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 40px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            z-index: 490;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+        }
+
+        .chat-widget.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        body.dark-mode .chat-widget {
+            background: #16213e;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .chat-header {
+            background: linear-gradient(135deg, #0f3460 0%, #1a5c8f 100%);
+            color: white;
+            padding: 1rem;
+            border-radius: 15px 15px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+        }
+
+        body.dark-mode .chat-header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        }
+
+        .chat-close {
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: transform 0.2s;
+        }
+
+        .chat-close:hover {
+            transform: rotate(90deg);
+        }
+
+        .chat-messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .chat-message {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            animation: slideInUp 0.3s ease;
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .chat-message.bot {
+            justify-content: flex-start;
+        }
+
+        .chat-message.user {
+            justify-content: flex-end;
+        }
+
+        .chat-bubble {
+            max-width: 80%;
+            padding: 0.7rem 1rem;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            word-wrap: break-word;
+        }
+
+        .chat-message.bot .chat-bubble {
+            background: rgba(212, 175, 55, 0.2);
+            color: #0f3460;
+            border-left: 3px solid #d4af37;
+        }
+
+        body.dark-mode .chat-message.bot .chat-bubble {
+            background: rgba(212, 175, 55, 0.15);
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .chat-message.user .chat-bubble {
+            background: #0f3460;
+            color: white;
+        }
+
+        body.dark-mode .chat-message.user .chat-bubble {
+            background: #d4af37;
+            color: #1a1a2e;
+            font-weight: 500;
+        }
+
+        .chat-input-area {
+            padding: 1rem;
+            border-top: 1px solid rgba(212, 175, 55, 0.3);
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        body.dark-mode .chat-input-area {
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .chat-input {
+            flex: 1;
+            padding: 0.6rem;
+            border: 1px solid #d4af37;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 0.9rem;
+            background: white;
+            color: #333;
+        }
+
+        body.dark-mode .chat-input {
+            background: #0f3460;
+            color: white;
+            border-color: #ffd700;
+        }
+
+        .chat-input::placeholder {
+            color: #999;
+        }
+
+        body.dark-mode .chat-input::placeholder {
+            color: #666;
+        }
+
+        .chat-send {
+            padding: 0.6rem 1rem;
+            background: #d4af37;
+            color: #0f3460;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .chat-send:hover {
+            background: #ffd700;
+            transform: translateY(-2px);
+        }
+
+        body.dark-mode .chat-send {
+            background: #ffd700;
+            color: #1a1a2e;
+        }
+
+        .chat-toggle-btn {
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background: #d4af37;
+            color: #0f3460;
+            border: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            z-index: 490;
+        }
+
+        .chat-toggle-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        .chat-toggle-btn.active {
+            background: #ff6b6b;
+            color: white;
+        }
+
+        body.dark-mode .chat-toggle-btn {
+            background: #ffd700;
+            color: #1a1a2e;
+        }
+
+        body.dark-mode .chat-toggle-btn.active {
+            background: #ff6b6b;
+            color: white;
+        }
+
+        .chat-messages::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .chat-messages::-webkit-scrollbar-track {
+            background: rgba(212, 175, 55, 0.1);
+        }
+
+        .chat-messages::-webkit-scrollbar-thumb {
+            background: #d4af37;
+            border-radius: 3px;
+        }
+
+        body.dark-mode .chat-messages::-webkit-scrollbar-track {
+            background: rgba(212, 175, 55, 0.1);
+        }
+        @media (max-width: 768px) {
+            .nav-links {
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                flex-direction: column;
+                gap: 0;
+                background: rgba(15, 52, 96, 0.99);
+                display: none;
+                padding: 1rem 0;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                width: 100%;
+                padding: 1rem;
+                border-radius: 0;
+                border-left: 3px solid transparent;
+            }
+
+            .nav-links a:hover {
+                border-left-color: #d4af37;
+                background: rgba(212, 175, 55, 0.15);
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-container {
+                position: relative;
+            }
+        }
+
+        /* Add spacing untuk main content */
+        header {
+            margin-top: 60px;
+            text-align: center !important;
+        }
+
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 900;
+            color: #d4af37;
+            margin-bottom: 0.5rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+            text-align: center !important;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 400;
+            letter-spacing: 1px;
+            text-align: center !important;
+        }
+
+        /* Sections */
+        section {
+            padding: 6rem 0;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        section.fade-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #d4af37;
+            position: relative;
+            padding-bottom: 1.5rem;
+        }
+
+        section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: #d4af37;
+        }
+
+        section p {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.85);
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* Hobbies */
+        .hobby-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .hobby-item {
+            background: rgba(15, 52, 96, 0.7);
+            backdrop-filter: blur(15px);
+            padding: 2.5rem;
+            border-radius: 15px;
+            text-align: center !important;
+            border: 2px solid #d4af37;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hobby-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(212, 175, 55, 0.1);
+            transition: left 0.3s ease;
+        }
+
+        .hobby-item:hover::before {
+            left: 100%;
+        }
+
+        .hobby-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.2);
+            border-color: rgba(212, 175, 55, 0.8);
+        }
+
+        .hobby-item h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #d4af37;
+            position: relative;
+            z-index: 1;
+            text-align: center !important;
+        }
+
+        .hobby-item p {
+            color: rgba(255, 255, 255, 0.8);
+            position: relative;
+            z-index: 1;
+            text-align: center !important;
+        }
+
+        /* About Section */
+        #about {
+            background: rgba(15, 52, 96, 0.3);
+        }
+
+        #hobbies {
+            background: linear-gradient(135deg, rgba(15, 52, 96, 0.4) 0%, rgba(26, 92, 143, 0.3) 100%);
+        }
+
+        #contact {
+            background: rgba(15, 52, 96, 0.3);
+        }
+
+        /* Company Section */
+        #company {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(15, 52, 96, 0.3) 100%);
+        }
+
+        .company-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .company-logo {
+            flex-shrink: 0;
+        }
+
+        .company-logo img {
+            width: 250px;
+            height: 250px;
+            object-fit: contain;
+            filter: drop-shadow(0 10px 25px rgba(212, 175, 55, 0.3));
+            transition: transform 0.3s ease, filter 0.3s ease;
+            border-radius: 35px;
+        }
+
+        .company-logo:hover img {
+            transform: scale(1.1) rotate(5deg);
+            filter: drop-shadow(0 15px 35px rgba(212, 175, 55, 0.5));
+        }
+
+        .company-info {
+            text-align: left;
+            max-width: 400px;
+        }
+
+        .company-info h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: #d4af37;
+            margin-bottom: 0.5rem;
+        }
+
+        .company-info p {
+            text-align: left;
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        /* Contact */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            background: rgba(212, 175, 55, 0.1);
+            backdrop-filter: blur(15px);
+            padding: 1.5rem 2.5rem;
+            border-radius: 15px;
+            text-decoration: none;
+            color: #d4af37;
+            border: 2px solid #d4af37;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            flex-direction: column;
+            width: 200px;
+        }
+
+        .social-icon {
+            font-size: 3rem;
+            display: block;
+        }
+
+        .social-text {
+            display: block;
+        }
+
+        .social-link:hover {
+            background: #d4af37;
+            color: #0f3460;
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(212, 175, 55, 0.4);
+        }
+
+        .social-link:hover .social-icon {
+            transform: scale(1.2) rotate(10deg);
+        }
+
+        /* Coding Gallery */
+        #gallery {
+            background: rgba(15, 52, 96, 0.3);
+        }
+
+        .gallery-wrapper {
+            position: relative;
+            margin-top: 2rem;
+        }
+
+        .gallery-container {
+            display: flex;
+            gap: 1.5rem;
+            overflow-x: auto;
+            padding: 1rem;
+            scroll-behavior: smooth;
+            scrollbar-width: thin;
+            scrollbar-color: #d4af37 rgba(15, 52, 96, 0.3);
+        }
+
+        .gallery-container::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .gallery-container::-webkit-scrollbar-track {
+            background: rgba(15, 52, 96, 0.3);
+            border-radius: 10px;
+        }
+
+        .gallery-container::-webkit-scrollbar-thumb {
+            background: #d4af37;
+            border-radius: 10px;
+        }
+
+        .gallery-container::-webkit-scrollbar-thumb:hover {
+            background: #fff;
+        }
+
+        .gallery-item {
+            flex-shrink: 0;
+            width: 280px;
+            height: 280px;
+            border-radius: 15px;
+            overflow: hidden;
+            border: 2px solid #d4af37;
+            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.2);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+            border-color: rgba(212, 175, 55, 0.8);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 52, 96, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-overlay-text {
+            color: #d4af37;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* Gallery Navigation Buttons */
+        .gallery-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(212, 175, 55, 0.9);
+            color: #0f3460;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .gallery-nav:hover {
+            background: #d4af37;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .gallery-nav.prev {
+            left: 10px;
+        }
+
+        .gallery-nav.next {
+            right: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(15, 52, 96, 0.95);
+            padding: 2rem 0;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.7);
+            border-top: 2px solid #d4af37;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .welcome-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .welcome-content p {
+                font-size: 1rem;
+            }
+
+            section h2 {
+                font-size: 2rem;
+                padding-bottom: 1rem;
+            }
+
+            section h2::after {
+                width: 50px;
+            }
+
+            section p {
+                font-size: 0.95rem;
+                padding: 0 1rem;
+            }
+
+            section {
+                padding: 4rem 0;
+            }
+
+            header p {
+                font-size: 1rem;
+            }
+
+            .social-links {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            .social-link {
+                width: 100%;
+                max-width: 250px;
+            }
+
+            .hobby-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .hobby-item {
+                padding: 1.5rem;
+                min-height: 200px;
+            }
+
+            .hobby-item h3 {
+                font-size: 1.5rem;
+            }
+
+            .company-container {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .company-logo img {
+                width: 180px;
+                height: 180px;
+            }
+
+            .company-info {
+                text-align: center;
+            }
+
+            .company-info h3 {
+                font-size: 1.5rem;
+            }
+
+            .company-info p {
+                text-align: center;
+                font-size: 0.95rem;
+            }
+
+            .gallery-item {
+                width: 220px;
+                height: 220px;
+            }
+
+            .gallery-nav {
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
+            }
+
+            .nav-links a {
+                font-size: 0.85rem;
+                padding: 0.75rem;
+            }
+
+            .dark-mode-toggle {
+                width: 45px;
+                height: 45px;
+                font-size: 1.2rem;
+                bottom: 15px;
+                right: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.5rem;
+            }
+
+            .welcome-content h1 {
+                font-size: 2rem;
+            }
+
+            section h2 {
+                font-size: 1.5rem;
+            }
+
+            .hobby-item {
+                padding: 1rem;
+                min-height: 160px;
+            }
+
+            .hobby-item h3 {
+                font-size: 1.3rem;
+            }
+
+            .hobby-item p {
+                font-size: 0.85rem;
+            }
+
+            .gallery-item {
+                width: 180px;
+                height: 180px;
+            }
+
+            .enter-btn {
+                padding: 0.8rem 2rem;
+                font-size: 0.9rem;
+            }
+
+            .social-link {
+                padding: 1rem;
+            }
+
+            section p {
+                font-size: 0.85rem;
+            }
+
+            .company-info h3 {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Dark Mode Toggle Button -->
+    <button class="dark-mode-toggle" id="darkModeToggle" title="Toggle Dark Mode">🌙</button>
+
+    <!-- Chat Widget Button -->
+    <button class="chat-toggle-btn" id="chatToggleBtn" title="Buka Chat">💬</button>
+
+    <!-- Chat Widget -->
+    <div class="chat-widget" id="chatWidget">
+        <div class="chat-header">
+            <span>Ahmd Assistant 🤖 V.1.0</span>
+            <button class="chat-close" id="chatClose">✕</button>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <div class="chat-message bot">
+                <div class="chat-bubble">Halo! 👋 Saya adalah Ahmd Assistant! 🤖 Saya siap membantu menjawab pertanyaan Anda tentang:</div>
+            </div>
+            <div class="chat-message bot">
+                <div class="chat-bubble">📌 <strong>Tentang Khaerul & AHMD:</strong> Siapa Khaerul, pengalaman, portofolio, kontak</div>
+            </div>
+            <div class="chat-message bot">
+                <div class="chat-bubble">💻 <strong>Coding & Web Dev:</strong> HTML, CSS, JavaScript, React, Node.js, framework, tips coding</div>
+            </div>
+            <div class="chat-message bot">
+                <div class="chat-bubble">📸 <strong>Photography & Design:</strong> Tips fotografi, editing, design, UX/UI</div>
+            </div>
+            <div class="chat-message bot">
+                <div class="chat-bubble">🛠️ <strong>Tech Skills:</strong> Tools, software, best practices</div>
+            </div>
+            <div class="chat-message bot">
+                <div class="chat-bubble">💡 Tanyakan apa saja! Saya siap membantu 😊</div>
+            </div>
+        </div>
+        <div class="chat-input-area">
+            <input type="text" class="chat-input" id="chatInput" placeholder="Ketik pertanyaan...">
+            <button class="chat-send" id="chatSend">Kirim</button>
+        </div>
+    </div>
+    <div class="welcome-page" id="welcomePage">
+        <div class="welcome-content">
+            <h1>Selamat Datang</h1>
+            <p>Selamat Datang di Situs Pribadi Saya V.2.0</V></p>
+            <div class="divider"></div>
+            <button class="enter-btn" onclick="enterWebsite()">Masuk</button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content" id="mainContent">
+        <!-- Navigation Bar -->
+        <nav id="navbar">
+            <div class="nav-container">
+                <a class="nav-brand" onclick="scrollToTop()">Beranda</a>
+                <button class="menu-toggle" id="menuToggle">☰</button>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#about">Tentang Saya</a></li>
+                    <li><a href="#hobbies">Hobi Saya</a></li>
+                    <li><a href="#company">Perusahaan Saya</a></li>
+                    <li><a href="#contact">Hubungi Saya</a></li>
+                </ul>
+            </div>
+        </nav>
+        <header>
+            <div class="container">
+                <h1>Khaerul Ahmad Ejasaputra</h1>
+                <p>Fotografer & Pengembang</p>
+            </div>
+        </header>
+
+        <section id="about">
+            <div class="container">
+                <h2>Tentang Saya</h2>
+                <p>
+                    Halo! Saya Khaerul Ahmad Ejasaputra, seorang fotografer dan pengembang yang bersemangat.
+                    Saya suka menangkap momen indah melalui lensa dan menghadirkan ide-ide kreatif melalui kode.
+                    Selamat datang di portfolio digital saya di mana passion bertemu dengan inovasi.
+                </p>
+            </div>
+        </section>
+
+        <section id="hobbies">
+            <div class="container">
+                <h2>Hobi Saya</h2>
+                <div class="hobby-grid">
+                    <div class="hobby-item">
+                        <h3>📸 Fotografi</h3>
+                        <p>Menangkap momen indah dan menceritakan kisah menarik melalui citra visual dan visi artistik.</p>
+                    </div>
+                    <div class="hobby-item">
+                        <h3>💻 Pemrograman</h3>
+                        <p>Membangun solusi digital inovatif dan mengeksplorasi teknologi terkini untuk menciptakan pengalaman bermakna.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery">
+            <div class="container">
+                <h2>Galeri Coding Saya</h2>
+                <p style="margin-bottom: 2rem;">Dokumentasi momen-momen saya saat mengerjakan proyek coding</p>
+                <div class="gallery-wrapper">
+                    <button class="gallery-nav prev" onclick="scrollGallery(-1)">❮</button>
+                    <div class="gallery-container" id="galleryContainer">
+                        <!-- Gallery item 1 -->
+                        <div class="gallery-item">
+                            <img src="desain tanpa judul.jpg" alt="Coding Session 1">
+                            <div class="gallery-overlay">
+                                <span class="gallery-overlay-text">Project Design</span>
+                            </div>
+                        </div>
+
+                        <!-- Gallery item 2 -->
+                        <div class="gallery-item">
+                            <img src="2.jpg" alt="Coding Session 2">
+                            <div class="gallery-overlay">
+                                <span class="gallery-overlay-text">Terminal Coding</span>
+                            </div>
+                        </div>
+
+                        <!-- Gallery item 3 -->
+                        <div class="gallery-item">
+                            <img src="3.jpg" alt="Coding Session 3">
+                            <div class="gallery-overlay">
+                                <span class="gallery-overlay-text">Development Work</span>
+                            </div>
+                        </div>
+
+                        <!-- Gallery item 4 -->
+                        <div class="gallery-item">
+                            <img src="4.jpg" alt="Coding Session 4">
+                            <div class="gallery-overlay">
+                                <span class="gallery-overlay-text">Mobile Testing</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="gallery-nav next" onclick="scrollGallery(1)">❯</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="company">
+            <div class="container">
+                <h2>Perusahaan Saya</h2>
+                <div class="company-container">
+                    <div class="company-logo">
+                        <img src="ahmd.jpg" alt="ahmd project and development ">
+                    </div>
+                    <div class="company-info">
+                        <h3>ahmd project and development</h3>
+                        <p>Mengubah ide menjadi solusi digital inovatif. Kami mengkhususkan diri dalam fotografi, pengembangan web, dan proyek teknologi kreatif. Misi kami adalah memberikan keunggulan dan mewujudkan visi Anda dengan solusi terdepan dan keahlian profesional.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <h2>Hubungi Saya</h2>
+                <p>Jangan ragu untuk menghubungi dan berkomunikasi dengan saya</p>
+                <div class="social-links">
+                    <a href="https://instagram.com/khaerulxahmd7" target="_blank" class="social-link instagram">
+                        <span class="social-icon">📷</span>
+                        <span class="social-text">Instagram</span>
+                    </a>
+                    <a href="mailto:ahmadproject49@gmail.com" class="social-link gmail">
+                        <span class="social-icon">✉️</span>
+                        <span class="social-text">Gmail</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="container">
+                <p>&copy; 2026 Khaerul Ahmad Ejasaputra. Semua hak dilindungi.</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Embedded JavaScript -->
+    <script>
+        // Gallery scroll function
+        function scrollGallery(direction) {
+            const gallery = document.getElementById('galleryContainer');
+            const scrollAmount = 300;
+            
+            if (direction === 1) {
+                gallery.scrollBy({
+                    left: scrollAmount,
+                    behavior: 'smooth'
+                });
+            } else {
+                gallery.scrollBy({
+                    left: -scrollAmount,
+                    behavior: 'smooth'
+                });
+            }
+        }
+
+        function enterWebsite() {
+            const welcomePage = document.getElementById('welcomePage');
+            const mainContent = document.getElementById('mainContent');
+            const navbar = document.getElementById('navbar');
+            
+            welcomePage.classList.add('hide');
+            setTimeout(() => {
+                mainContent.classList.add('show');
+                navbar.classList.add('show');
+            }, 300);
+
+            // Trigger fade-in animation for sections
+            setTimeout(() => {
+                const observerOptions = {
+                    threshold: 0.1
+                };
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('fade-in');
+                        }
+                    });
+                }, observerOptions);
+
+                document.querySelectorAll('section').forEach(section => {
+                    observer.observe(section);
+                });
+            }, 800);
+        }
+
+        // Scroll to top function
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuToggle = document.getElementById('menuToggle');
+            const navLinks = document.getElementById('navLinks');
+            
+            menuToggle.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+            });
+
+            // Close menu when link is clicked
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', function() {
+                    navLinks.classList.remove('active');
+                });
+            });
+
+            // Dark Mode Toggle Functionality
+            const darkModeToggle = document.getElementById('darkModeToggle');
+            const htmlElement = document.documentElement;
+            const body = document.body;
+            
+            // Check if dark mode preference is saved in localStorage
+            if (localStorage.getItem('darkMode') === 'enabled') {
+                body.classList.add('dark-mode');
+                darkModeToggle.textContent = '☀️';
+            }
+            
+            darkModeToggle.addEventListener('click', function() {
+                body.classList.toggle('dark-mode');
+                
+                // Save preference to localStorage
+                if (body.classList.contains('dark-mode')) {
+                    localStorage.setItem('darkMode', 'enabled');
+                    darkModeToggle.textContent = '☀️';
+                } else {
+                    localStorage.setItem('darkMode', 'disabled');
+                    darkModeToggle.textContent = '🌙';
+                }
+            });
+
+            // Chat Widget Functionality
+            const chatToggleBtn = document.getElementById('chatToggleBtn');
+            const chatWidget = document.getElementById('chatWidget');
+            const chatClose = document.getElementById('chatClose');
+            const chatSend = document.getElementById('chatSend');
+            const chatInput = document.getElementById('chatInput');
+            const chatMessages = document.getElementById('chatMessages');
+
+            // Predefined chat responses
+            // OpenRouter API Configuration
+            const OPENROUTER_API_KEY = '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'; // ⚠️ GANTI DENGAN API KEY OPENROUTER ANDA
+            const OPENROUTER_URL = 'https://openrouter.ai/api/v1/chat/completions';
+            
+            // Site URL & Title for OpenRouter rankings (Optional but recommended)
+            const SITE_URL = window.location.origin; 
+            const SITE_TITLE = "Ahmd Portfolio";
+
+            // Context about Khaerul for the AI
+            const SYSTEM_CONTEXT = `
+Anda adalah "Ahmd Assistant", asisten AI untuk website portfolio pribadi Khaerul Ahmad Ejasaputra.
+Tugas anda adalah menjawab pertanyaan pengunjung seolah-olah anda adalah representasi digital dari Khaerul.
+
+INFORMASI TENTANG KHAERUL:
+- Nama Lengkap: Khaerul Ahmad Ejasaputra
+- Pekerjaan: Fotografer & Pengembang (Full-stack Developer)
+- Perusahaan: AHMD Project and Development
+- Misi: Mengubah ide menjadi solusi digital inovatif. Spesialisasi dalam fotografi, web dev, dan creative tech.
+- Lokasi/Kontak: Instagram @khaerulxahmd7, Email ahmadproject49@gmail.com
+
+SKILL & KEAHLIAN:
+- Coding: HTML, CSS, JavaScript (Vanilla, Async/Await), React, Node.js, Express, Python.
+- Database: MongoDB, MySQL, Firebase.
+- Tools: VS Code, Git, Docker, Figma, Photoshop.
+- Fotografi: Portrait, Product, Event photography, Photo Editing/Retouching.
+- Design: UI/UX Design, Web Design using CSS (Flexbox, Grid, Animations).
+
+GAYA BICARA:
+- Ramah, profesional, tapi santai dan antusias (seperti developer yang friendly).
+- Gunakan emoji sesekali agar tidak kaku (😊, 🚀, 💻, 📸).
+- Jika ditanya tentang 'Gallery' atau 'Portfolio', arahkan mereka untuk melihat section Gallery di halaman ini.
+- Jika ditanya coding/teknis, berikan jawaban singkat tapi berbobot.
+- Jawab dalam Bahasa Indonesia yang baik dan gaul.
+
+INSTRUKSI KHUSUS:
+- Jika user bertanya hal yang tidak sopan atau di luar konteks, alihkan pembicaraan dengan sopan kembali ke topik portfolio/coding/fotografi.
+- Jangan berhalusinasi tentang proyek yang tidak disebutkan di atas, cukup bilang "Khaerul memiliki banyak proyek menarik, silakan cek bagian Gallery".
+`;
+
+            // Toggle chat widget
+            chatToggleBtn.addEventListener('click', function() {
+                chatWidget.classList.toggle('active');
+                chatToggleBtn.classList.toggle('active');
+                
+                if (chatWidget.classList.contains('active')) {
+                    chatInput.focus();
+                }
+            });
+
+            // Close chat widget
+            chatClose.addEventListener('click', function() {
+                chatWidget.classList.remove('active');
+                chatToggleBtn.classList.remove('active');
+            });
+
+            // Function to call OpenRouter API
+            async function callOpenRouterAPI(userMessage) {
+                if (!OPENROUTER_API_KEY || OPENROUTER_API_KEY === '') {
+                    return "⚠️ API Key OpenRouter belum dikonfigurasi. Silakan masukkan API Key di dalam code `index.html`.";
+                }
+
+                const payload = {
+                    "model": "google/gemini-2.0-flash-001", // Menggunakan model Gemini 2.0 Flash via OpenRouter
+                    "messages": [
+                        {
+                            "role": "system",
+                            "content": SYSTEM_CONTEXT
+                        },
+                        {
+                            "role": "user",
+                            "content": userMessage
+                        }
+                    ]
+                };
+
+                try {
+                    const response = await fetch(OPENROUTER_URL, {
+                        method: 'POST',
+                        headers: {
+                            'Authorization': `Bearer ${OPENROUTER_API_KEY}`,
+                            'HTTP-Referer': SITE_URL,
+                            'X-Title': SITE_TITLE,
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (!response.ok) {
+                        const errorData = await response.json().catch(() => ({}));
+                        console.error("OpenRouter Error Detail:", errorData);
+                        throw new Error(`Error ${response.status}: ${errorData.error?.message || response.statusText}`);
+                    }
+
+                    const data = await response.json();
+                    
+                    if (data.choices && data.choices.length > 0 && data.choices[0].message) {
+                        return data.choices[0].message.content;
+                    } else {
+                        return "Maaf, saya sedang bingung. Bisa ulangi pertanyaan?";
+                    }
+
+                } catch (error) {
+                    console.error("OpenRouter API Error:", error);
+                    // Menampilkan alert agar user tahu apa masalahnya
+                    alert(`Gagal menghubungi AI: ${error.message}\nPeriksa koneksi internet atau API Key anda.`);
+                    return "Maaf, terjadi kesalahan koneksi ke otak AI saya. Coba lagi nanti ya! 😓";
+                }
+            }
+
+            // Send message function
+            async function sendMessage() {
+                const message = chatInput.value.trim();
+                
+                if (message === '') return;
+
+                // Add user message
+                const userMessageDiv = document.createElement('div');
+                userMessageDiv.className = 'chat-message user';
+                userMessageDiv.innerHTML = `<div class="chat-bubble">${escapeHtml(message)}</div>`;
+                chatMessages.appendChild(userMessageDiv);
+
+                chatInput.value = '';
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+
+                // Add loading/typing indicator
+                const loadingDiv = document.createElement('div');
+                loadingDiv.className = 'chat-message bot loading-msg';
+                loadingDiv.innerHTML = `<div class="chat-bubble">Sedang mengetik... ✍️</div>`;
+                chatMessages.appendChild(loadingDiv);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+
+                // Call API
+                const botResponse = await callOpenRouterAPI(message);
+
+                // Remove loading indicator
+                chatMessages.removeChild(loadingDiv);
+
+                // Add bot response
+                const botMessageDiv = document.createElement('div');
+                botMessageDiv.className = 'chat-message bot';
+                // Simple markdown-ish to HTML conversion could be added here preferably, 
+                // but for now we'll just sanitize basic text to prevent XSS while allowing basic formatting if needed
+                // For safety, converting newlines to <br>
+                const formattedResponse = escapeHtml(botResponse).replace(/\n/g, '<br>');
+                
+                botMessageDiv.innerHTML = `<div class="chat-bubble">${formattedResponse}</div>`;
+                chatMessages.appendChild(botMessageDiv);
+
+                // Auto scroll to latest message
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+
+            // Helper to prevent XSS
+            function escapeHtml(text) {
+                const map = {
+                    '&': '&amp;',
+                    '<': '&lt;',
+                    '>': '&gt;',
+                    '"': '&quot;',
+                    "'": '&#039;'
+                };
+                return text.replace(/[&<>"']/g, function(m) { return map[m]; });
+            }
+
+            // Send message on button click
+            chatSend.addEventListener('click', sendMessage);
+
+            // Send message on Enter key
+            chatInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    sendMessage();
+                }
+            });
+
+            const observerOptions = {
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                    }
+                });
+            }, observerOptions);
+
+            // Observe sections only after entering website
+            const mainContent = document.getElementById('mainContent');
+            if (mainContent.classList.contains('show')) {
+                document.querySelectorAll('section').forEach(section => {
+                    observer.observe(section);
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>
