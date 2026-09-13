@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khaerul Ahmad Ejasaputra - Portofolio +</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Situs pribadi resmi Khaerul Ahmad Ejasaputra. Siswa SMP dengan impian besar, fotografer, web developer, dan pendiri ahmd project & development sekaligus kreator aplikasi RakAman.id.">
+    <meta name="keywords" content="Khaerul Ahmad Ejasaputra, ahmd project, RakAman.id, fotografer, pengembang web, siswa SMP, portfolio Indonesia">
+    <meta name="author" content="Khaerul Ahmad Ejasaputra">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Khaerul Ahmad Ejasaputra - Portfolio">
+    <meta property="og:description" content="Siswa SMP dengan semangat besar di dunia teknologi, fotografer, dan kreator aplikasi RakAman.id.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Glowing Background Blobs -->
+    <div class="blob-container">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <!-- Certificate Lightbox Modal -->
+    <div class="cert-modal" id="certModal">
+        <div class="cert-modal-inner">
+            <img src="" alt="Sertifikat" id="certModalImg">
+            <button class="cert-modal-close" id="certModalClose" aria-label="Tutup">✕</button>
+        </div>
+    </div>
+
+
+    <!-- Welcome / Intro Screen -->
+    <div class="welcome-page" id="welcomePage">
+        <!-- Decorative orbs for bright bg depth -->
+        <div class="welcome-orb orb-1"></div>
+        <div class="welcome-orb orb-2"></div>
+        <div class="welcome-orb orb-3"></div>
+        <div class="welcome-content">
+            <img src="eeyjaa.png" alt="Khaerul Ahmad Ejasaputra" class="welcome-image">
+            <h1>Selamat Datang</h1>
+            <p>Portofolio+ Saya &nbsp;·&nbsp; <V class="3">3</V>.0</p>
+            <div class="divider"></div>
+            <button class="enter-btn" onclick="enterWebsite()">Masuk</button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content" id="mainContent">
+
+        <!-- Floating Glass Nav -->
+        <nav id="navbar">
+            <div class="nav-container">
+                <a class="nav-brand" onclick="scrollToTop()">Halo!</a>
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">☰</button>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#about">Tentang</a></li>
+                    <li><a href="#journey">Perjalanan</a></li>
+                    <li><a href="#project">Proyek</a></li>
+                    <li><a href="#certs">Sertifikat</a></li>
+                    <li><a href="#hobbies">Hobi</a></li>
+                    <li><a href="#gallery">Galeri</a></li>
+                    <li><a href="#company">Perusahaan</a></li>
+                    <li><a href="#contact">Kontak</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Header Hero -->
+        <header>
+            <div class="container">
+                <h1>Khaerul Ahmad Ejasaputra</h1>
+                <p>Fotografer &nbsp;·&nbsp; Web Developer &nbsp;·&nbsp; Kreator RakAman.id</p>
+            </div>
+        </header>
+
+        <main>
+
+            <!-- ══════════════════════════════
+                 TENTANG SAYA
+            ══════════════════════════════ -->
+            <section id="about">
+                <div class="container">
+                    <div class="about-card">
+                        <h2>Tentang Saya</h2>
+                        <p>
+                            Halo! Perkenalkan, saya <strong>Khaerul Ahmad Ejasaputra</strong> — seorang siswa sekolah menengah pertama
+                            dengan impian besar menjadi <strong>pilot</strong>. Namun sejak duduk di bangku SMP, saya mulai jatuh cinta
+                            pada dunia pemrograman, software engineering, dan teknologi.
+                        </p>
+                        <p style="margin-top: 1rem;">
+                            Dengan modal nekat "coba-coba aja" di awal kelas 7, saya memulai perjalanan coding saya.
+                            Kini saya telah menciptakan aplikasi sungguhan yang dapat diunduh, berkolaborasi bersama AI,
+                            menyelesaikan kursus internasional, dan menulis karya ilmiah — semuanya sebelum lulus SMP.
+                            Ini bukan akhir, ini baru permulaan.
+                        </p>
+                        <div class="quote-block">
+                            <p>"Langkah terpenting adalah langkah berikutnya."</p>
+                            <cite>— Brandon Sanderson</cite>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ══════════════════════════════
+                 PERJALANAN (TIMELINE)
+            ══════════════════════════════ -->
+            <section id="journey">
+                <div class="container">
+                    <h2>Perjalanan Saya</h2>
+                    <div class="journey-timeline">
+
+                        <div class="timeline-item">
+                            <div class="timeline-label">Awal Kelas 7 SMP</div>
+                            <h4>✈️ Impian & Langkah Pertama</h4>
+                            <p>Dengan mimpi menjadi pilot, saya justru mulai tertarik pada dunia pemrograman dan teknologi. Bermodalkan semangat "coba-coba aja", saya memulai perjalanan coding pertama saya.</p>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-label">Kelas 8 SMP</div>
+                            <h4>💻 Website Pertama Berhasil Dibuat</h4>
+                            <p>Setelah belajar keras, saya mulai perlahan-lahan berhasil menciptakan beberapa website dari hasil eksplorasi mandiri terhadap dunia programmer.</p>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-label">Kelas 8 SMP — Kolaborasi AI</div>
+                            <h4>🤖 Berkolaborasi dengan Kecerdasan Buatan</h4>
+                            <p>Seiring AI berkembang, saya mulai berkolaborasi dengan AI untuk mewujudkan ide-ide saya. Hasilnya bukan lagi sekadar website biasa — melainkan sebuah aplikasi nyata yang dapat diunduh.</p>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-label">Kelas 8 SMP — Pencapaian Besar</div>
+                            <h4>🚀 Lahirnya RakAman.id</h4>
+                            <p>Aplikasi pertama saya, <strong>RakAman.id</strong>, berhasil diluncurkan! Sebuah aplikasi real yang membantu pengguna melacak tanggal kedaluwarsa produk untuk mengurangi food waste.</p>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-label">Kelas 8 SMP — Akademik</div>
+                            <h4>📄 Karya Tulis Ilmiah Pertama</h4>
+                            <p>Saya menulis artikel/karya tulis ilmiah berjudul <em>"Efektivitas Penggunaan Aplikasi RakAman.id Sebagai Asisten Digital Untuk Mengurangi Food Waste Kerugian Finansial"</em>.</p>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-label">Kelas 8 SMP — Sertifikasi</div>
+                            <h4>🏅 Lulus Kursus Google & Microsoft di Coursera</h4>
+                            <p>Mendaftar program Financial Aid Coursera dan alhamdulillah diterima. Saya berhasil menyelesaikan dua kursus internasional dan mendapatkan sertifikat dari Google dan Microsoft.</p>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- ══════════════════════════════
+                 PROYEK UTAMA — RakAman.id
+            ══════════════════════════════ -->
+            <section id="project">
+                <div class="container">
+                    <h2>Proyek Utama</h2>
+                    <div class="featured-project-card">
+                        <div class="project-badge">
+                            <span class="dot"></span>
+                            Live · Dapat Diunduh
+                        </div>
+                        <h3>RakAman.id</h3>
+                        <div class="project-tagline">Asisten Digital Anti Food Waste · Real App · Hasil Kolaborasi AI</div>
+                        <p>
+                            RakAman.id adalah aplikasi pertama saya yang sungguhan — bukan sekadar website, melainkan aplikasi nyata yang
+                            dapat diunduh. Aplikasi ini membantu pengguna menghitung dan mendapatkan notifikasi kapan suatu produk atau
+                            barang akan kedaluwarsa, sehingga dapat mengurangi <em>food waste</em> dan kerugian finansial dalam kehidupan sehari-hari.
+                        </p>
+                        <p>
+                            Aplikasi ini lahir dari kolaborasi saya bersama AI — sebuah bukti bahwa dengan kreativitas dan ketekunan,
+                            seorang siswa SMP pun bisa menciptakan solusi teknologi yang berdampak nyata bagi masyarakat.
+                        </p>
+
+                        <button class="research-block" onclick="openPDF('KARYA TULIS ILMIAH RakAman.id - Google Dokumen.pdf')" title="Klik untuk membuka karya tulis ilmiah">
+                            <div class="research-icon">📄</div>
+                            <div>
+                                <strong>Karya Tulis Ilmiah</strong>
+                                <p>"Efektivitas Penggunaan Aplikasi RakAman.id Sebagai Asisten Digital Untuk Mengurangi Food Waste Kerugian Finansial"</p>
+                            </div>
+                        </button>
+
+                        <div class="project-links">
+                            <a href="https://rak-aman-id-web-promosi.vercel.app" target="_blank" rel="noopener noreferrer" class="project-btn primary">
+                                🚀 Kunjungi RakAman.id
+                            </a>
+                            <a href="https://instagram.com/rakaman.id" target="_blank" rel="noopener noreferrer" class="project-btn secondary">
+                                📷 Instagram @rakaman.id
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ══════════════════════════════
+                 SERTIFIKASI & KURSUS
+            ══════════════════════════════ -->
+            <section id="certs">
+                <div class="container">
+                    <h2>Sertifikasi & Kursus</h2>
+                    <p style="margin-bottom: 1rem;">
+                        Mendaftar melalui program <strong>Financial Aid Coursera</strong> dan alhamdulillah diterima.
+                        Berhasil menyelesaikan dua kursus internasional dari institusi terkemuka dunia.
+                        Klik kartu untuk melihat sertifikat secara lengkap.
+                    </p>
+
+                    <div class="cert-grid">
+
+                        <!-- Google Certificate -->
+                        <div class="cert-card" onclick="openCertModal('Coursera-Sertif Google.png', 'Google — Introduction to AI')" id="cert-google">
+                            <div class="cert-img-wrap">
+                                <img src="Coursera-Sertif Google.png" alt="Sertifikat Google — Introduction to AI" loading="lazy">
+                                <div class="cert-zoom-hint">🔍</div>
+                            </div>
+                            <div class="cert-body">
+                                <div class="cert-issuer">Google · Coursera</div>
+                                <div class="cert-name">Introduction to Artificial Intelligence</div>
+                                <div class="cert-badge">✓ Verified Certificate</div>
+                                <div class="cert-year">Kelas 8 SMP &nbsp;·&nbsp; Financial Aid Approved</div>
+                            </div>
+                        </div>
+
+                        <!-- Microsoft Certificate -->
+                        <div class="cert-card" onclick="openCertModal('Coursera-Sertif Microsoft.png', 'Microsoft — Introduction to Computers')" id="cert-microsoft">
+                            <div class="cert-img-wrap">
+                                <img src="Coursera-Sertif Microsoft.png" alt="Sertifikat Microsoft — Introduction to Computers" loading="lazy">
+                                <div class="cert-zoom-hint">🔍</div>
+                            </div>
+                            <div class="cert-body">
+                                <div class="cert-issuer">Microsoft · Coursera</div>
+                                <div class="cert-name">Introduction to Computers</div>
+                                <div class="cert-badge">✓ Verified Certificate</div>
+                                <div class="cert-year">Kelas 8 SMP &nbsp;·&nbsp; Financial Aid Approved</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- ══════════════════════════════
+                 HOBI SAYA
+            ══════════════════════════════ -->
+            <section id="hobbies">
+                <div class="container">
+                    <h2>Hobi Saya</h2>
+                    <div class="hobby-grid">
+                        <div class="hobby-item">
+                            <h3>📸 Fotografi</h3>
+                            <p>Menangkap momen indah dan menceritakan kisah menarik melalui citra visual dan visi artistik. Fotografi mengajarkan saya untuk melihat dunia dengan sudut pandang yang berbeda.</p>
+                        </div>
+                        <div class="hobby-item">
+                            <h3>💻 Pemrograman</h3>
+                            <p>Membangun solusi digital inovatif dan mengeksplorasi teknologi terkini. Bermula dari "coba-coba aja" di kelas 7, kini telah melahirkan aplikasi nyata yang dapat diunduh.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ══════════════════════════════
+                 GALERI CODING
+            ══════════════════════════════ -->
+            <section id="gallery">
+                <div class="container">
+                    <h2>Galeri Coding Saya</h2>
+                    <p style="margin-bottom: 2rem;">Dokumentasi momen-momen saya saat mengerjakan proyek coding</p>
+                    <div class="gallery-wrapper">
+                        <button class="gallery-nav prev" onclick="scrollGallery(-1)" aria-label="Sebelumnya">❮</button>
+                        <div class="gallery-container" id="galleryContainer">
+                            <div class="gallery-item">
+                                <img src="desain tanpa judul.jpg" alt="Project Design Session">
+                                <div class="gallery-overlay">
+                                    <span class="gallery-overlay-text">Project Design</span>
+                                </div>
+                            </div>
+                            <div class="gallery-item">
+                                <img src="2.jpg" alt="Terminal Coding Session">
+                                <div class="gallery-overlay">
+                                    <span class="gallery-overlay-text">Terminal Coding</span>
+                                </div>
+                            </div>
+                            <div class="gallery-item">
+                                <img src="3.jpg" alt="Development Work Session">
+                                <div class="gallery-overlay">
+                                    <span class="gallery-overlay-text">Development Work</span>
+                                </div>
+                            </div>
+                            <div class="gallery-item">
+                                <img src="4.jpg" alt="Mobile Testing Session">
+                                <div class="gallery-overlay">
+                                    <span class="gallery-overlay-text">Mobile Testing</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="gallery-nav next" onclick="scrollGallery(1)" aria-label="Selanjutnya">❯</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ══════════════════════════════
+                 PERUSAHAAN
+            ══════════════════════════════ -->
+            <section id="company">
+                <div class="container">
+                    <div class="company-card">
+                        <h2>Perusahaan Saya</h2>
+                        <div class="company-container">
+                            <div class="company-logo">
+                                <img src="ahmd (1).jpg" alt="ahmd project and development">
+                            </div>
+                            <div class="company-info">
+                                <h3>ahmd project and development</h3>
+                                <p>Mengubah ide menjadi solusi digital inovatif. Kami mengkhususkan diri dalam fotografi, pengembangan web, dan proyek teknologi kreatif. Misi kami adalah memberikan keunggulan dan mewujudkan visi Anda dengan solusi terdepan dan keahlian profesional.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ══════════════════════════════
+                 HUBUNGI SAYA
+            ══════════════════════════════ -->
+            <section id="contact">
+                <div class="container">
+                    <h2>Hubungi Saya</h2>
+                    <p style="text-align: center;">Jangan ragu untuk menghubungi dan berkomunikasi dengan saya</p>
+                    <div class="social-links">
+                        <a href="https://instagram.com/ahmd.eeyjaa" target="_blank" rel="noopener noreferrer" class="social-link">
+                            <span class="social-icon">📷</span>
+                            <span class="social-text">Instagram</span>
+                        </a>
+                        <a href="mailto:ahmadproject49@gmail.com" class="social-link">
+                            <span class="social-icon">✉️</span>
+                            <span class="social-text">Gmail</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <p>&copy; 2026 Khaerul Ahmad Ejasaputra &nbsp;·&nbsp; ahmd project and development. Semua hak dilindungi.</p>
+            </div>
+        </footer>
+
+    </div><!-- end .main-content -->
+
+    <script>
+        /* ──────────────────────────
+           GALLERY
+        ────────────────────────── */
+        function scrollGallery(direction) {
+            const gallery = document.getElementById('galleryContainer');
+            gallery.scrollBy({ left: direction * 344, behavior: 'smooth' });
+        }
+
+        /* ──────────────────────────
+           CERTIFICATE LIGHTBOX
+        ────────────────────────── */
+        function openCertModal(src, alt) {
+            const modal = document.getElementById('certModal');
+            const img   = document.getElementById('certModalImg');
+            img.src = src;
+            img.alt = alt;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeCertModal() {
+            document.getElementById('certModal').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        /* ──────────────────────────
+           ENTER WEBSITE
+        ────────────────────────── */
+        function enterWebsite() {
+            const welcomePage = document.getElementById('welcomePage');
+            const mainContent = document.getElementById('mainContent');
+            const navbar      = document.getElementById('navbar');
+
+            welcomePage.classList.add('hide');
+            setTimeout(() => {
+                mainContent.classList.add('show');
+                navbar.classList.add('show');
+            }, 300);
+            setTimeout(initScrollReveal, 800);
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function openPDF(filename) {
+            window.open(filename, '_blank');
+        }
+
+        /* ──────────────────────────
+           SCROLL REVEAL
+        ────────────────────────── */
+        function initScrollReveal() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) return;
+                    entry.target.classList.add('fade-in');
+                    const staggerItems = entry.target.querySelectorAll(
+                        '.hobby-item, .gallery-item, .company-logo, .company-info, .social-link, .about-card, .timeline-item, .cert-card, .featured-project-card'
+                    );
+                    staggerItems.forEach((el, i) => {
+                        setTimeout(() => {
+                            el.style.opacity = '1';
+                            el.style.transform = 'translateY(0) translateX(0)';
+                        }, i * 100);
+                    });
+                    observer.unobserve(entry.target);
+                });
+            }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+            document.querySelectorAll('section').forEach(section => {
+                const items = section.querySelectorAll(
+                    '.hobby-item, .gallery-item, .company-logo, .company-info, .social-link, .about-card, .timeline-item, .cert-card, .featured-project-card'
+                );
+                items.forEach(el => {
+                    el.style.opacity = '0';
+                    el.style.transform = 'translateY(28px)';
+                    el.style.transition = 'opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1)';
+                });
+                observer.observe(section);
+            });
+        }
+
+        /* ──────────────────────────
+           DOM EVENTS
+        ────────────────────────── */
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // Blob parallax
+            const blobs = document.querySelectorAll('.blob');
+            window.addEventListener('mousemove', e => {
+                const xP = e.clientX / window.innerWidth  - 0.5;
+                const yP = e.clientY / window.innerHeight - 0.5;
+                blobs.forEach((b, i) => {
+                    const f = (i + 1) * 20;
+                    b.style.transform = `translate(${xP * f}px, ${yP * f}px)`;
+                });
+            });
+
+            // 3D Card Tilt
+            document.querySelectorAll('.hobby-item, .company-card, .about-card, .featured-project-card').forEach(card => {
+                card.addEventListener('mousemove', e => {
+                    const r  = card.getBoundingClientRect();
+                    const xP = (e.clientX - r.left)  / r.width  - 0.5;
+                    const yP = (e.clientY - r.top)   / r.height - 0.5;
+                    card.style.transform    = `perspective(1000px) rotateX(${yP * -7}deg) rotateY(${xP * 7}deg) translateY(-8px)`;
+                    card.style.transition   = 'transform 0.1s ease';
+                });
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform  = '';
+                    card.style.transition = 'transform 0.5s cubic-bezier(0.16,1,0.3,1)';
+                });
+            });
+
+            // Mobile Nav
+            const menuToggle = document.getElementById('menuToggle');
+            const navLinks   = document.getElementById('navLinks');
+            menuToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
+            navLinks.querySelectorAll('a').forEach(a => {
+                a.addEventListener('click', () => navLinks.classList.remove('active'));
+            });
+
+
+            // Lightbox close events
+            document.getElementById('certModalClose').addEventListener('click', closeCertModal);
+            document.getElementById('certModal').addEventListener('click', e => {
+                if (e.target === document.getElementById('certModal')) closeCertModal();
+            });
+            document.addEventListener('keydown', e => {
+                if (e.key === 'Escape') closeCertModal();
+            });
+        });
+    </script>
+</body>
+</html>
+
+</body>
+</html>
